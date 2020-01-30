@@ -7,19 +7,14 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<bean class="com.xworkz.rocket.bean.Fuel" id="fuel">
-	<constructor-arg value="2"></constructor-arg>
+	<bean class="com.xworkz.labour.bean.ThreadImpl" id="threadImpl">
+	</bean>
+	
+	<bean class="com.xworkz.labour.bean.Labour" id="labour">
+	<constructor-arg value="kittu"></constructor-arg>
+	<property name="experiance" value="3"></property>
+	<property name="threadImpl" ref="threadImpl"></property>
 	</bean>
 
-	<bean class="com.xworkz.rocket.bean.Satellite" id="satellite">
-	<property name="launched" value="12"></property>
-	<property name="location" value="sriharikota"></property>
-	</bean>
-	
-	<bean class="com.xworkz.rocket.bean.Rocket" id="rocket">
-	<constructor-arg ref="fuel"></constructor-arg>
-	<property name="sat" ref="satellite"></property>
-	<property name="countryName" value="India"></property>
-	</bean>
-	
+
 </beans>
