@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<bean class="com.xworkz.rocket.bean.Fuel" id="fuel">
+	<constructor-arg value="2"></constructor-arg>
+	</bean>
+
+	<bean class="com.xworkz.rocket.bean.Satellite" id="satellite">
+	<property name="launched" value="12"></property>
+	<property name="location" value="sriharikota"></property>
+	</bean>
+	
+	<bean class="com.xworkz.rocket.bean.Rocket" id="rocket">
+	<constructor-arg ref="fuel"></constructor-arg>
+	<property name="sat" ref="satellite"></property>
+	<property name="countryName" value="India"></property>
+	</bean>
+	
+</beans>
